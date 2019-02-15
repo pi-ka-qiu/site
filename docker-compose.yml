@@ -1,0 +1,7 @@
+version: '3.0'
+networks:
+  site_network:
+    driver: bridge
+volumes:
+  site_mysql: {}
+  site_redis: {}

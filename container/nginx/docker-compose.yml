@@ -1,0 +1,17 @@
+version: "3"
+services:
+  nginx:
+    image: nginx
+    volumes:
+      - ${NGINX_PATH:?err}/conf/dev.template:/etc/nginx/conf.d/dev.template
+    ports:
+      - "80:80"
+    environment:
+      - SITE_IP=${SITE_IP}
+    command: /bin/bash -c "envsubst '$${SITE_IP}'< /etc/nginx/conf.d/dev.template > /etc/nginx/conf.d/dev.conf &&  exec nginx -g 'daemon off;'"
+    networks:
+      - default
+      - site_network
+networks:
+  site_network:
+    driver: bridge
