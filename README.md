@@ -39,3 +39,19 @@ docker-compose up mysql
 docker-compose up redis
 
 ```
+
+### 运行端口
+```
+redis 6379:6379
+mysql 3306:3306
+nginx 80:80
+```
+
+### mysql 5.7开启远程连接
+
+```
+mysql  -u root -p
+use mysql;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '密码' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
