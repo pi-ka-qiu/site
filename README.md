@@ -47,7 +47,7 @@ mysql 3306:3306
 nginx 80:80
 ```
 
-### mysql 5.7开启远程连接
+### mysql 5.7 及开启远程连接
 
 ```
 mysql  -u root -p
